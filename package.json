@@ -2,6 +2,8 @@
  
   "name": "my-app",
  
+  "homepage": "https://Arpan840.github.io/React-text-util",
+ 
   "version": "0.1.0",
  
   "private": true,
@@ -38,6 +40,12 @@
   },
  
   "scripts": {
+ 
+   
+  "predeploy": "npm run build",
+ 
+   
+  "deploy": "gh-pages -d build",
  
    
   "start": "react-scripts start",

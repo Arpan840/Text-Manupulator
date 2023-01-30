@@ -3,8 +3,18 @@ import './App.css';
 
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
+import About from './Components/About';
 
 import React, {useState} from 'react';
+
+import {
+  BrowserRouter as Router,
+  
+  Route,
+  Routes,
+ 
+} from "react-router-dom";
+
 
 
 
@@ -109,7 +119,7 @@ function App() {
   
   return (
     <>
-    
+    <Router>
    
 <Navbar title="TextUtil" about="About Us" mode={mode} changeMode={changeMode} dbMode={dbMode} greyMode={greyMode} gMode={gMode} rMode={rMode} yMode={yMode} skMode={skMode}/>
 
@@ -118,13 +128,23 @@ function App() {
   
           
          
-        <TextForm heading="Enter the Components to analyze" mode={mode} />
+        
        
-
-
+        <Routes>
+          <Route path="/about" element={<About />}>
+            
+          </Route>
+         
+          <Route path="/" element={<TextForm heading="Enter the Components to analyze" mode={mode} />}>
+          
+          </Route>
+        </Routes>
+ 
+ 
 
 
 </div>
+</Router>
 
 
    </>
